@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #04133e;
+  --navy-soft: #3f4a5e;
+  --silver: #a7a9ac;
+  --silver-line: #d7d9dc;
+  --paper: #f7f8f9;
+  --border: #e3e5e8;
+  --muted: #6b6f76;
+  --muted-2: #565a62;
+  --muted-3: #9a9ea5;
+  --font-outfit: "Outfit", sans-serif;
+  --font-manrope: "Manrope", system-ui, sans-serif;
+  --font-vazirmatn: "Vazirmatn", Tahoma, sans-serif;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-silver: var(--silver);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    background: #ffffff;
+    color: var(--navy);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+/* Buttons, nav links, footer links, cards -- shared hover/active motion */
+.btn-primary,
+.btn-outline,
+.nav-link,
+.footer-link,
+.card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(11, 30, 63, 0.22);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.96);
+  filter: brightness(0.92);
+}
+
+.btn-outline:hover {
+  background: var(--navy) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+.btn-outline:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.nav-link:hover {
+  color: var(--navy) !important;
+}
+.nav-link:active {
+  opacity: 0.55;
+}
+
+.card {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.card:hover {
+  border-color: var(--silver) !important;
+  box-shadow: 0 12px 28px rgba(11, 30, 63, 0.1);
+  transform: translateY(-3px);
+}
+
+.footer-link:hover {
+  color: #fff !important;
+  opacity: 0.85;
+}
+
+/* Hero graphic interactivity */
+.hero-line {
+  stroke-dasharray: 4 3;
+  transition:
+    opacity 0.35s ease,
+    stroke-width 0.35s ease;
+  animation: aren-dash 1.6s linear infinite;
+  animation-play-state: paused;
+}
+.hero-graphic-wrap:hover .hero-line {
+  opacity: 0.95;
+  stroke-width: 1.8;
+  animation-play-state: running;
+}
+.hero-node {
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hero-graphic-wrap:hover .hero-node {
+  transform: scale(1.35);
+  filter: drop-shadow(0 0 5px rgba(11, 30, 63, 0.45));
+}
+@keyframes aren-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+.pulse-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: aren-tower-pulse 2.4s ease-out infinite;
+  opacity: 0.85;
+}
+@keyframes aren-tower-pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(9);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line,
+  .pulse-ring {
+    animation: none !important;
+  }
+}

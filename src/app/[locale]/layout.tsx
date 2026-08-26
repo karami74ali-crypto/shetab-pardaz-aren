@@ -1,0 +1,132 @@
+import type { Metadata } from "next";
+import "../globals.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/outfit/600.css";
+import "@fontsource/outfit/700.css";
+import "@fontsource/outfit/800.css";
+import "@fontsource/manrope/400.css";
+import "@fontsource/manrope/500.css";
+import "@fontsource/manrope/600.css";
+import "@fontsource/manrope/700.css";
+import "@fontsource/manrope/800.css";
+import "@fontsource/vazirmatn/400.css";
+import "@fontsource/vazirmatn/500.css";
+import "@fontsource/vazirmatn/600.css";
+import "@fontsource/vazirmatn/700.css";
+import "@fontsource/vazirmatn/800.css";
+import { locales, isLocale, dirFor, defaultLocale, type Locale } from "@/lib/i18n";
+import { getSiteSettings, SITE_URL } from "@/lib/content";
+import { notFound } from "next/navigation";
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const settings = getSiteSettings(locale);
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: settings.metaTitle,
+    description: settings.metaDescription,
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/`,
+      languages: {
+        en: `${SITE_URL}/en/`,
+        fa: `${SITE_URL}/fa/`,
+        "x-default": `${SITE_URL}/`,
+      },
+    },
+    openGraph: {
+      title: settings.metaTitle,
+      description: settings.metaDescription,
+      url: `${SITE_URL}/${locale}/`,
+      siteName: settings.siteName,
+      locale: locale === "fa" ? "fa_IR" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/images/og-cover.png",
+          width: 1200,
+          height: 630,
+          alt: settings.ogImageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: settings.metaTitle,
+      description: settings.metaDescription,
+      images: ["/images/og-cover.png"],
+    },
+    icons: {
+      icon: "/favicon.svg",
+      shortcut: "/favicon.svg",
+      apple: "/apple-touch-icon.png",
+    },
+  };
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  if (!isLocale(rawLocale)) notFound();
+  const locale: Locale = rawLocale;
+  const dir = dirFor(locale);
+  const settings = getSiteSettings(locale);
+
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: settings.siteName,
+    alternateName: "Aren",
+    url: `${SITE_URL}/${locale}/`,
+    logo: `${SITE_URL}/logos/logo-en-color.svg`,
+    image: `${SITE_URL}/images/og-cover.png`,
+    telephone: "+98-21-7789-8332",
+    email: "info@sparen.ir",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Unit 86, 4th Floor, Milad Tower, East Hemmat Highway",
+      addressLocality: "Tehran",
+      addressCountry: "IR",
+      postalCode: "1449613251",
+    },
+    sameAs: [
+      "https://www.instagram.com/sparen.ir",
+      "https://www.linkedin.com/company/sparen.ir",
+    ],
+    description: settings.metaDescription,
+  };
+
+  return (
+    <html lang={locale === "fa" ? "fa" : "en"} dir={dir}>
+      <body
+        style={{
+          fontFamily:
+            locale === "fa"
+              ? "'Vazirmatn', Tahoma, sans-serif"
+              : "'Manrope', system-ui, sans-serif",
+        }}
+      >
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        {children}
+      </body>
+    </html>
+  );
+}

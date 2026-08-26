@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "links": [
+      { "label": "Services", "href": "#services" },
+      { "label": "About", "href": "#about" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "phoneDisplay": "+98 21 7789 8332",
+    "phoneHref": "tel:+982177898332"
+  },
+  "hero": {
+    "eyebrow": "INTEGRATED SOLUTIONS FOR THE FUTURE",
+    "headline": "Turning Technology into",
+    "headlineAccent": "Growth Acceleration.",
+    "paragraph": "Shetab Pardaz Aren partners with organizations to design and deliver smart, secure, and resilient infrastructure across IT, telecommunications, and energy.",
+    "ctaPrimary": "Start a Partnership",
+    "ctaSecondary": "View Services",
+    "tagline": "Design. Connect. Advance."
+  },
+  "services": {
+    "eyebrow": "WHAT WE DO",
+    "heading": "Solutions for Every Connection",
+    "intro": "From infrastructure to energy, a focused set of services built to form one dependable system.",
+    "items": [
+      {
+        "icon": "network",
+        "title": "Network",
+        "description": "Designing and deploying secure, stable, and scalable computer networks."
+      },
+      {
+        "icon": "telecom",
+        "title": "Telecommunications",
+        "description": "Communication solutions, data transfer, and specialized telecom infrastructure."
+      },
+      {
+        "icon": "software",
+        "title": "Software",
+        "description": "Design, development, and delivery of custom, intelligent software solutions."
+      },
+      {
+        "icon": "hardware",
+        "title": "Hardware",
+        "description": "Sourcing and supply of hardware equipment with guaranteed quality and warranty."
+      },
+      {
+        "icon": "ai",
+        "title": "Artificial Intelligence (AI)",
+        "description": "AI-driven solutions, intelligent automation, and machine learning integration to modernize your operations."
+      },
+      {
+        "icon": "energy",
+        "title": "Power & Energy",
+        "description": "Industrial power projects, renewable energy, and emergency backup power."
+      },
+      {
+        "icon": "trading",
+        "title": "Trading",
+        "description": "Sourcing, import, and export of specialized technology goods and equipment."
+      },
+      {
+        "icon": "support",
+        "title": "Service Support & Maintenance",
+        "description": "Technical support, scheduled servicing, and preventive maintenance to keep your systems running reliably."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT SHETAB PARDAZ AREN",
+    "heading": "A Technical Partner for Complex Paths.",
+    "paragraph": "Grounded in specialized expertise and an engineering mindset, we build solutions that work in the real world — from one dependable connection to the infrastructure that makes your business growth possible.",
+    "panelHeading": "Technology with an Operational Mindset",
+    "panelParagraph": "At Aren, every project begins with a precise understanding of the problem, and continues through responsible design, execution, and support. Our goal is lasting value, stronger security, and better performance for our clients.",
+    "points": [
+      "Expert, responsive team",
+      "Needs-based design",
+      "Precise, documented execution",
+      "Ongoing support & partnership"
+    ]
+  },
+  "trustBar": [
+    { "title": "Expert Team", "description": "Experienced specialists across technology domains" },
+    { "title": "Current Knowledge", "description": "Up to date with global standards & technologies" },
+    { "title": "Trust & Transparency", "description": "Clear, accountable communication at every stage" },
+    { "title": "Guaranteed Quality", "description": "Precise, documented execution & service assurance" }
+  ],
+  "contact": {
+    "heading": "Your Next Project Starts with a Conversation.",
+    "paragraph": "Reach out for a consultation and a review of your technical requirements.",
+    "ctaLabel": "Request a Consultation",
+    "email": "info@sparen.ir",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSubmit": "Send Message",
+    "formSuccessTitle": "Thank you.",
+    "formSuccessBody": "Your message has been received — we'll be in touch soon."
+  },
+  "footer": {
+    "tagline": "Specialized solutions in IT, telecommunications, software, and energy.",
+    "quickLinksHeading": "QUICK LINKS",
+    "contactHeading": "CONTACT",
+    "socialHeading": "SOCIAL",
+    "addressHeading": "ADDRESS",
+    "phoneDisplay": "+98 21 7789 8332",
+    "addressLine": "Unit 86, 4th Floor, Milad Tower,<br>East Hemmat Highway, Tehran, Iran",
+    "postalLabel": "Postal Code: 1449613251",
+    "social": [
+      { "label": "Instagram", "href": "https://www.instagram.com/sparen.ir" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/company/sparen.ir" },
+      { "label": "WhatsApp", "href": "https://wa.me/989194194969" }
+    ],
+    "bottomTagline": "Engineered with an operational mindset.",
+    "copyright": "Shetab Pardaz Aren. All rights reserved. © 2026"
+  }
+}

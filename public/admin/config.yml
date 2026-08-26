@@ -1,0 +1,219 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "en"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "home_en"
+        label: "Homepage — English"
+        file: "content/home/en.json"
+        fields:
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Menu Links", name: "links", widget: "list", fields: [
+                  { label: "Label", name: "label", widget: "string" },
+                  { label: "Link (#section)", name: "href", widget: "string" },
+                ] }
+              - { label: "Phone (display)", name: "phoneDisplay", widget: "string" }
+              - { label: "Phone (tel: link)", name: "phoneHref", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Headline accent", name: "headlineAccent", widget: "string" }
+              - { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Primary button text", name: "ctaPrimary", widget: "string" }
+              - { label: "Secondary button text", name: "ctaSecondary", widget: "string" }
+              - { label: "Tagline (near graphic)", name: "tagline", widget: "string" }
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro paragraph", name: "intro", widget: "text" }
+              - label: "Service Cards"
+                name: "items"
+                widget: "list"
+                fields:
+                  - label: "Icon"
+                    name: "icon"
+                    widget: "select"
+                    options: ["network", "telecom", "software", "hardware", "ai", "energy", "trading", "support"]
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Panel heading", name: "panelHeading", widget: "string" }
+              - { label: "Panel paragraph", name: "panelParagraph", widget: "text" }
+              - { label: "Bullet points", name: "points", widget: "list", field: { label: "Point", name: "point", widget: "string" } }
+          - label: "Trust Bar (4 stats)"
+            name: "trustBar"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Button label", name: "ctaLabel", widget: "string" }
+              - { label: "Contact email", name: "email", widget: "string" }
+              - { label: 'Form field: "Name"', name: "formName", widget: "string" }
+              - { label: 'Form field: "Email"', name: "formEmail", widget: "string" }
+              - { label: 'Form field: "Message"', name: "formMessage", widget: "string" }
+              - { label: "Submit button text", name: "formSubmit", widget: "string" }
+              - { label: "Success title", name: "formSuccessTitle", widget: "string" }
+              - { label: "Success message", name: "formSuccessBody", widget: "text" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Tagline", name: "tagline", widget: "text" }
+              - { label: '"Quick Links" heading', name: "quickLinksHeading", widget: "string" }
+              - { label: '"Contact" heading', name: "contactHeading", widget: "string" }
+              - { label: '"Social" heading', name: "socialHeading", widget: "string" }
+              - { label: '"Address" heading', name: "addressHeading", widget: "string" }
+              - { label: "Phone (display)", name: "phoneDisplay", widget: "string" }
+              - { label: "Address (HTML, <br> allowed)", name: "addressLine", widget: "text" }
+              - { label: "Postal code label", name: "postalLabel", widget: "string" }
+              - label: "Social links"
+                name: "social"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL", name: "href", widget: "string" }
+              - { label: "Bottom tagline", name: "bottomTagline", widget: "string" }
+              - { label: "Copyright line", name: "copyright", widget: "string" }
+
+      - name: "home_fa"
+        label: "Homepage — Persian"
+        file: "content/home/fa.json"
+        fields:
+          - label: "ناوبری (Navigation)"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "لینک‌های منو", name: "links", widget: "list", fields: [
+                  { label: "عنوان", name: "label", widget: "string" },
+                  { label: "لینک (#بخش)", name: "href", widget: "string" },
+                ] }
+              - { label: "تلفن (نمایشی)", name: "phoneDisplay", widget: "string" }
+              - { label: "تلفن (لینک tel:)", name: "phoneHref", widget: "string" }
+          - label: "هیرو (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "زیرعنوان کوچک", name: "eyebrow", widget: "string" }
+              - { label: "عنوان اصلی", name: "headline", widget: "string" }
+              - { label: "بخش رنگی عنوان", name: "headlineAccent", widget: "string" }
+              - { label: "ادامه‌ی عنوان (اختیاری)", name: "headlineSuffix", widget: "string", required: false }
+              - { label: "پاراگراف", name: "paragraph", widget: "text" }
+              - { label: "متن دکمه اصلی", name: "ctaPrimary", widget: "string" }
+              - { label: "متن دکمه دوم", name: "ctaSecondary", widget: "string" }
+              - { label: "شعار کنار تصویر", name: "tagline", widget: "string" }
+          - label: "خدمات (Services)"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "زیرعنوان کوچک", name: "eyebrow", widget: "string" }
+              - { label: "عنوان بخش", name: "heading", widget: "string" }
+              - { label: "پاراگراف معرفی", name: "intro", widget: "text" }
+              - label: "کارت‌های خدمات"
+                name: "items"
+                widget: "list"
+                fields:
+                  - label: "آیکون"
+                    name: "icon"
+                    widget: "select"
+                    options: ["network", "telecom", "software", "hardware", "ai", "energy", "trading", "support"]
+                  - { label: "عنوان", name: "title", widget: "string" }
+                  - { label: "توضیحات", name: "description", widget: "text" }
+          - label: "درباره ما (About)"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "زیرعنوان کوچک", name: "eyebrow", widget: "string" }
+              - { label: "عنوان", name: "heading", widget: "string" }
+              - { label: "پاراگراف", name: "paragraph", widget: "text" }
+              - { label: "عنوان پنل", name: "panelHeading", widget: "string" }
+              - { label: "پاراگراف پنل", name: "panelParagraph", widget: "text" }
+              - { label: "موارد فهرست", name: "points", widget: "list", field: { label: "مورد", name: "point", widget: "string" } }
+          - label: "نوار اعتماد (۴ آیتم)"
+            name: "trustBar"
+            widget: "list"
+            fields:
+              - { label: "عنوان", name: "title", widget: "string" }
+              - { label: "توضیح", name: "description", widget: "string" }
+          - label: "تماس (Contact)"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "عنوان", name: "heading", widget: "string" }
+              - { label: "پاراگراف", name: "paragraph", widget: "text" }
+              - { label: "متن دکمه", name: "ctaLabel", widget: "string" }
+              - { label: "ایمیل تماس", name: "email", widget: "string" }
+              - { label: 'فیلد فرم: "نام"', name: "formName", widget: "string" }
+              - { label: 'فیلد فرم: "ایمیل"', name: "formEmail", widget: "string" }
+              - { label: 'فیلد فرم: "پیام"', name: "formMessage", widget: "string" }
+              - { label: "متن دکمه ارسال", name: "formSubmit", widget: "string" }
+              - { label: "عنوان پیام موفقیت", name: "formSuccessTitle", widget: "string" }
+              - { label: "متن پیام موفقیت", name: "formSuccessBody", widget: "text" }
+          - label: "فوتر (Footer)"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "شعار", name: "tagline", widget: "text" }
+              - { label: "عنوان «دسترسی سریع»", name: "quickLinksHeading", widget: "string" }
+              - { label: "عنوان «تماس»", name: "contactHeading", widget: "string" }
+              - { label: "عنوان «شبکه‌های اجتماعی»", name: "socialHeading", widget: "string" }
+              - { label: "عنوان «آدرس»", name: "addressHeading", widget: "string" }
+              - { label: "تلفن (نمایشی)", name: "phoneDisplay", widget: "string" }
+              - { label: "آدرس (HTML، تگ <br> مجاز است)", name: "addressLine", widget: "text" }
+              - { label: "کد پستی", name: "postalLabel", widget: "string" }
+              - label: "لینک‌های شبکه‌های اجتماعی"
+                name: "social"
+                widget: "list"
+                fields:
+                  - { label: "عنوان", name: "label", widget: "string" }
+                  - { label: "آدرس (URL)", name: "href", widget: "string" }
+              - { label: "شعار پایینی", name: "bottomTagline", widget: "string" }
+              - { label: "متن کپی‌رایت", name: "copyright", widget: "string" }
+
+  - name: "settings"
+    label: "Site Settings / SEO"
+    files:
+      - name: "settings_en"
+        label: "SEO — English"
+        file: "content/settings/en.json"
+        fields:
+          - { label: "Site name", name: "siteName", widget: "string" }
+          - { label: "Meta title", name: "metaTitle", widget: "string" }
+          - { label: "Meta description", name: "metaDescription", widget: "text" }
+          - { label: "Social share image alt text", name: "ogImageAlt", widget: "string" }
+      - name: "settings_fa"
+        label: "SEO — Persian"
+        file: "content/settings/fa.json"
+        fields:
+          - { label: "نام سایت", name: "siteName", widget: "string" }
+          - { label: "عنوان متا", name: "metaTitle", widget: "string" }
+          - { label: "توضیحات متا", name: "metaDescription", widget: "text" }
+          - { label: "متن جایگزین تصویر اشتراک‌گذاری", name: "ogImageAlt", widget: "string" }
