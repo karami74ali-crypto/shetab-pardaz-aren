@@ -4,19 +4,14 @@
 // content via Resend (https://resend.com) instead of Netlify's own Forms
 // email notification, which now requires a paid plan.
 //
-// Plain JavaScript, zero extra npm dependencies (uses Node's built-in
-// global fetch) so it works with no changes to package.json.
-//
 // Required environment variable (set in Netlify: Project configuration ->
 // Environment variables):
 //   RESEND_API_KEY     - your Resend API key
 //
 // Optional environment variables:
 //   NOTIFY_TO_EMAIL     - where to send the notification
-//                         (default: karami74ali@gmail.com)
 //   NOTIFY_FROM_EMAIL   - the "from" address
-//                         (default: onboarding@resend.dev, which works
-//                          without verifying a custom domain in Resend)
+//                         (default: onboarding@resend.dev)
 
 const DEFAULT_TO = "karami74ali@gmail.com";
 const DEFAULT_FROM = "onboarding@resend.dev";
@@ -39,9 +34,6 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: "Invalid JSON" };
   }
 
-  // Netlify doesn't publish an exact schema for this webhook, so we look for
-  // the human-readable fields defensively in a couple of likely spots, and
-  // always attach the full raw payload too so nothing is ever lost.
   const submission = body.payload || body;
   const human = submission.human_fields || submission.data || {};
 
@@ -54,7 +46,6 @@ exports.handler = async (event) => {
 
   const name = pick("name", "نام") || "-";
   const email = pick("email", "ایمیل") || submission.email || "-";
-  const phone = pick("phone", "تلفن", "شماره تماس") || "-";
   const message = pick("message", "پیام") || "-";
   const formName = submission.form_name || body.form_name || "contact";
 
@@ -74,15 +65,7 @@ exports.handler = async (event) => {
       <h2>پیام جدید از فرم تماس سایت شتاب‌پرداز آرن</h2>
       <p><strong>نام:</strong> ${escapeHtml(name)}</p>
       <p><strong>ایمیل:</strong> ${escapeHtml(email)}</p>
-      <p><strong>تلفن:</strong> ${escapeHtml(phone)}</p>
       <p><strong>پیام:</strong><br/>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
-      <hr/>
-      <details>
-        <summary>داده‌ی کامل (خام)</summary>
-        <pre style="white-space: pre-wrap; direction: ltr; text-align: left;">${escapeHtml(
-          JSON.stringify(submission, null, 2)
-        )}</pre>
-      </details>
     </div>
   `;
 
