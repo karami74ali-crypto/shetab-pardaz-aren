@@ -1,9 +1,18 @@
 {
   "nav": {
     "links": [
-      { "label": "خدمات", "href": "#services" },
-      { "label": "درباره ما", "href": "#about" },
-      { "label": "تماس با ما", "href": "#contact" }
+      {
+        "label": "خدمات",
+        "href": "#services"
+      },
+      {
+        "label": "درباره ما",
+        "href": "#about"
+      },
+      {
+        "label": "تماس با ما",
+        "href": "#contact"
+      }
     ],
     "phoneDisplay": "۰۲۱ ۷۷۸۹ ۸۳۳۲",
     "phoneHref": "tel:+982177898332"
@@ -79,38 +88,59 @@
     ]
   },
   "trustBar": [
-    { "title": "تیم متخصص", "description": "متخصصان مجرب در حوزه‌های مختلف فناوری" },
-    { "title": "دانش فنی به‌روز", "description": "همگام با جدیدترین استانداردهای جهانی" },
-    { "title": "تعهد و اعتماد", "description": "شفافیت و پاسخگویی در تمام مراحل همکاری" },
-    { "title": "کیفیت تضمینی", "description": "اجرای دقیق و مستند با ضمانت کیفیت خدمات" }
+    {
+      "title": "تیم متخصص",
+      "description": "متخصصان مجرب در حوزه‌های مختلف فناوری"
+    },
+    {
+      "title": "دانش فنی به‌روز",
+      "description": "همگام با جدیدترین استانداردهای جهانی"
+    },
+    {
+      "title": "تعهد و اعتماد",
+      "description": "شفافیت و پاسخگویی در تمام مراحل همکاری"
+    },
+    {
+      "title": "کیفیت تضمینی",
+      "description": "اجرای دقیق و مستند با ضمانت کیفیت خدمات"
+    }
   ],
   "contact": {
+    "formSuccessBody": "پیام شما دریافت شد؛ به‌زودی با شما تماس خواهیم گرفت.",
     "heading": "پروژه‌ی بعدی شما از یک گفت‌وگو شروع می‌شود.",
-    "paragraph": "برای دریافت مشاوره و بررسی نیازهای فنی خود با ما در تماس باشید.",
+    "formMessage": "پیام شما",
     "ctaLabel": "درخواست مشاوره",
-    "email": "info@sparen.ir",
+    "paragraph": "برای دریافت مشاوره و بررسی نیازهای فنی خود با ما در تماس باشید.",
     "formName": "نام و نام خانوادگی",
     "formEmail": "ایمیل",
-    "formMessage": "پیام شما",
-    "formSubmit": "ارسال پیام",
     "formSuccessTitle": "سپاسگزاریم.",
-    "formSuccessBody": "پیام شما دریافت شد؛ به‌زودی با شما تماس خواهیم گرفت."
+    "formSubmit": "ارسال پیام",
+    "email": "info@sparen.ir"
   },
   "footer": {
-    "tagline": "ارائه‌دهنده‌ی راهکارهای تخصصی در فناوری اطلاعات، ارتباطات، نرم‌افزار و انرژی.",
-    "quickLinksHeading": "دسترسی سریع",
     "contactHeading": "تماس",
-    "socialHeading": "شبکه‌های اجتماعی",
-    "addressHeading": "آدرس",
-    "phoneDisplay": "۰۲۱ ۷۷۸۹ ۸۳۳۲",
+    "bottomTagline": "طراحی و توسعه با نگاه مهندسی.",
+    "copyright": "شرکت شتاب‌پرداز آرن. تمامی حقوق محفوظ است. © ۲۰۲۶",
     "addressLine": "ایران، تهران، بزرگراه همت شرق،<br>برج میلاد، طبقه ۴، واحد ۸۶",
     "postalLabel": "کد پستی: ۱۴۴۹۶۱۳۲۵۱",
     "social": [
-      { "label": "اینستاگرام", "href": "https://www.instagram.com/sparen.ir" },
-      { "label": "لینکدین", "href": "https://www.linkedin.com/company/sparen.ir" },
-      { "label": "واتساپ", "href": "https://wa.me/989194194969" }
+      {
+        "label": "اینستاگرام",
+        "href": "https://www.instagram.com/sparen.co"
+      },
+      {
+        "label": "لینکدین",
+        "href": "https://www.linkedin.com/company/sparen.co"
+      },
+      {
+        "label": "واتساپ",
+        "href": "https://wa.me/989194194969"
+      }
     ],
-    "bottomTagline": "طراحی و توسعه با نگاه مهندسی.",
-    "copyright": "شرکت شتاب‌پرداز آرن. تمامی حقوق محفوظ است. © ۲۰۲۶"
+    "tagline": "ارائه‌دهنده‌ی راهکارهای تخصصی در فناوری اطلاعات، ارتباطات، نرم‌افزار و انرژی.",
+    "addressHeading": "آدرس",
+    "phoneDisplay": "۰۲۱ ۷۷۸۹ ۸۳۳۲",
+    "socialHeading": "شبکه‌های اجتماعی",
+    "quickLinksHeading": "دسترسی سریع"
   }
 }
