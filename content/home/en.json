@@ -1,9 +1,18 @@
 {
   "nav": {
     "links": [
-      { "label": "Services", "href": "#services" },
-      { "label": "About", "href": "#about" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ],
     "phoneDisplay": "+98 21 7789 8332",
     "phoneHref": "tel:+982177898332"
@@ -78,38 +87,59 @@
     ]
   },
   "trustBar": [
-    { "title": "Expert Team", "description": "Experienced specialists across technology domains" },
-    { "title": "Current Knowledge", "description": "Up to date with global standards & technologies" },
-    { "title": "Trust & Transparency", "description": "Clear, accountable communication at every stage" },
-    { "title": "Guaranteed Quality", "description": "Precise, documented execution & service assurance" }
+    {
+      "title": "Expert Team",
+      "description": "Experienced specialists across technology domains"
+    },
+    {
+      "title": "Current Knowledge",
+      "description": "Up to date with global standards & technologies"
+    },
+    {
+      "title": "Trust & Transparency",
+      "description": "Clear, accountable communication at every stage"
+    },
+    {
+      "title": "Guaranteed Quality",
+      "description": "Precise, documented execution & service assurance"
+    }
   ],
   "contact": {
+    "formSuccessBody": "Your message has been received — we'll be in touch soon.",
     "heading": "Your Next Project Starts with a Conversation.",
-    "paragraph": "Reach out for a consultation and a review of your technical requirements.",
+    "formMessage": "Message",
     "ctaLabel": "Request a Consultation",
-    "email": "info@sparen.ir",
+    "paragraph": "Reach out for a consultation and a review of your technical requirements.",
     "formName": "Name",
     "formEmail": "Email",
-    "formMessage": "Message",
-    "formSubmit": "Send Message",
     "formSuccessTitle": "Thank you.",
-    "formSuccessBody": "Your message has been received — we'll be in touch soon."
+    "formSubmit": "Send Message",
+    "email": "info@sparen.ir"
   },
   "footer": {
-    "tagline": "Specialized solutions in IT, telecommunications, software, and energy.",
-    "quickLinksHeading": "QUICK LINKS",
     "contactHeading": "CONTACT",
-    "socialHeading": "SOCIAL",
-    "addressHeading": "ADDRESS",
-    "phoneDisplay": "+98 21 7789 8332",
+    "bottomTagline": "Engineered with an operational mindset.",
+    "copyright": "© 2026 Shetab Pardaz Aren. All rights reserved. ",
     "addressLine": "Unit 86, 4th Floor, Milad Tower,<br>East Hemmat Highway, Tehran, Iran",
     "postalLabel": "Postal Code: 1449613251",
     "social": [
-      { "label": "Instagram", "href": "https://www.instagram.com/sparen.ir" },
-      { "label": "LinkedIn", "href": "https://www.linkedin.com/company/sparen.ir" },
-      { "label": "WhatsApp", "href": "https://wa.me/989194194969" }
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/sparen.ir"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/sparen.ir"
+      },
+      {
+        "label": "WhatsApp",
+        "href": "https://wa.me/989194194969"
+      }
     ],
-    "bottomTagline": "Engineered with an operational mindset.",
-    "copyright": "Shetab Pardaz Aren. All rights reserved. © 2026"
+    "tagline": "Specialized solutions in IT, telecommunications, software, and energy.",
+    "addressHeading": "ADDRESS",
+    "phoneDisplay": "+98 21 7789 8332",
+    "socialHeading": "SOCIAL",
+    "quickLinksHeading": "QUICK LINKS"
   }
 }
