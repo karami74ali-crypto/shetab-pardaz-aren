@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import { Vazirmatn } from "next/font/google";
 import "../globals.css";
 import "@fontsource/outfit/700.css";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/600.css";
 import "@fontsource/manrope/700.css";
-import "@fontsource/vazirmatn/400.css";
-import "@fontsource/vazirmatn/600.css";
-import "@fontsource/vazirmatn/700.css";
-import "@fontsource/vazirmatn/800.css";
 import { locales, isLocale, dirFor, defaultLocale, type Locale } from "@/lib/i18n";
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic", "latin"],
+  display: "optional",
+  variable: "--font-vazirmatn",
+});
 import { getSiteSettings, SITE_URL } from "@/lib/content";
 import { notFound } from "next/navigation";
 
@@ -118,12 +121,12 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={locale === "fa" ? "fa" : "en"} dir={dir}>
+    <html lang={locale === "fa" ? "fa" : "en"} dir={dir} className={vazirmatn.variable}>
       <body
         style={{
           fontFamily:
             locale === "fa"
-              ? "'Vazirmatn', Tahoma, sans-serif"
+              ? "var(--font-vazirmatn), Tahoma, sans-serif"
               : "'Manrope', system-ui, sans-serif",
         }}
       >
