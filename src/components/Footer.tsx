@@ -146,8 +146,16 @@ export default function Footer({
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-5">
+       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-5">
         <div className="text-xs text-[#7d8290]">{content.bottomTagline}</div>
+        <div
+          className="shrink-0"
+          style={{ width: 80 }}
+          dangerouslySetInnerHTML={{
+            __html:
+              "<a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=7501775&Code=X91BHm1ktmdLopsUhmBES7zOrwidvSR9'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=7501775&Code=X91BHm1ktmdLopsUhmBES7zOrwidvSR9' alt='نماد اعتماد الکترونیکی شتاب‌پرداز آرن' style='cursor:pointer;width:100%;height:auto' code='X91BHm1ktmdLopsUhmBES7zOrwidvSR9'></a>",
+          }}
+        />
         <div className="text-xs text-[#7d8290]">{content.copyright}</div>
       </div>
     </footer>
