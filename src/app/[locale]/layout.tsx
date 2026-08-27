@@ -85,7 +85,12 @@ export default async function LocaleLayout({
   const locale: Locale = rawLocale;
   const dir = dirFor(locale);
   const settings = getSiteSettings(locale);
-
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: settings.siteName,
+    url: `${SITE_URL}/${locale}/`,
+  };
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -128,6 +133,11 @@ export default async function LocaleLayout({
               : "'Manrope', system-ui, sans-serif",
         }}
       >
+               <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
